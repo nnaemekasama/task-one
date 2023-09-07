@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 data-testid="slackUserName">Nnaemeka Nnodim</h2>
+      <div class="image-container"><img src="./linkdin profile.png" alt="Nnaemeka Nnodim" data-testid="slackDisplayImage" ></div>
+      <p id="currentDayOfTheWeek" data-testid="currentDayOfTheWeek"></p>
+      <p id="currentUTCTime" data-testid="currentUTCTime"></p>
+      <h3 data-testid="myTrack">Frontend</h3>
+      <a href="" data-testid="githubURL">Stage One Github Link</a>
+
+    </div>
+    <script>
+    
+        function updateCurrentDayOfWeek() {
+            const currentDate = new Date();
+            const options = { weekday: 'long' }; 
+            const currentDayOfWeek = currentDate.toLocaleString('en-US', options);
+            const currentDayElement = document.getElementById('currentDayOfTheWeek');
+            currentDayElement.textContent = currentDayOfWeek;
+        }
+
+        function updateCurrentUTCTime() {
+            const currentDate = new Date();
+            const currentUTCTime = currentDate.toLocaleTimeString('en-US', { timeZone: 'UTC', timeStyle: 'medium' });
+            const currentUTCTimeElement = document.getElementById('currentUTCTime');
+            currentUTCTimeElement.textContent = currentUTCTime;
+        }
+
+        updateCurrentDayOfWeek();
+        updateCurrentUTCTime();
+
+        setInterval(updateCurrentUTCTime, 1000);
+    </script>
+  </body>
+</html>
