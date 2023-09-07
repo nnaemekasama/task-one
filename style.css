@@ -46,5 +46,10 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-
+padding: .8rem;
+background: rgb(130, 130, 135);
+color: beige;
+}
+a:hover {
+  scale: 0.8;
 }
